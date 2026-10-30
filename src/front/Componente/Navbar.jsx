@@ -1,25 +1,54 @@
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+  const links = [
+    { to: '/', label: 'Inicio' },
+    { to: '/temporada', label: 'Temporada Actual' },
+    { to: '/historia', label: 'Historia' },
+    { to: '/noticias', label: 'Noticias' },
+  ]
+
+  const baseLinkStyle = {
+    color: '#e8edf5',
+    textDecoration: 'none',
+    fontSize: '0.88rem',
+    fontWeight: 600,
+    padding: '0.45rem 0.95rem',
+    borderRadius: '8px',
+    border: '1px solid rgba(225, 6, 0, 0.4)',
+    background: 'rgba(225, 6, 0, 0.08)',
+  }
+
+  const activeLinkStyle = {
+    ...baseLinkStyle,
+    background: 'linear-gradient(90deg, rgba(225, 6, 0, 0.35), rgba(255, 88, 0, 0.3))',
+    border: '1px solid rgba(225, 6, 0, 0.75)',
+    color: '#fff',
+  }
+
   return (
     <nav
       style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '1rem 2rem',
-        background: 'linear-gradient(90deg, rgba(15,23,42,0.95) 0%, rgba(17,24,39,0.92) 60%, rgba(30,27,75,0.9) 100%)',
-        borderBottom: '1px solid rgba(99,102,241,0.45)',
-        boxShadow: '0 6px 18px rgba(59,130,246,0.14)',
+        gap: '1rem',
+        padding: '0.9rem 2rem',
+        background: 'linear-gradient(90deg, rgba(12,8,10,0.97) 0%, rgba(16,10,14,0.95) 60%, rgba(24,10,14,0.92) 100%)',
+        borderBottom: '1px solid rgba(225, 6, 0, 0.45)',
+        boxShadow: '0 6px 20px rgba(225, 6, 0, 0.16)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 10,
       }}
     >
       <Link
         to="/"
         style={{
-          fontSize: '1.5rem',
-          fontWeight: 800,
+          fontSize: '1.55rem',
+          fontWeight: 900,
           letterSpacing: '0.02em',
-          background: 'linear-gradient(90deg, #3b82f6 0%, #06b6d4 38%, #8b5cf6 72%, #ec4899 100%)',
+          background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
           WebkitBackgroundClip: 'text',
           backgroundClip: 'text',
           color: 'transparent',
@@ -28,6 +57,14 @@ const Navbar = () => {
       >
         F1
       </Link>
+
+      <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
+        {links.map((l) => (
+          <Link key={l.to} to={l.to} style={l.to === '/' ? activeLinkStyle : baseLinkStyle}>
+            {l.label}
+          </Link>
+        ))}
+      </div>
     </nav>
   )
 }

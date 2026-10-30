@@ -84,10 +84,10 @@ const championships = [
 ];
 
 const cardStyle = {
-  background: 'linear-gradient(180deg, rgba(13,18,35,0.9) 0%, rgba(10,14,28,0.94) 100%)',
-  border: '1px solid rgba(157, 177, 255, 0.34)',
+  background: 'linear-gradient(180deg, rgba(15,18,27,0.92) 0%, rgba(9,12,20,0.96) 100%)',
+  border: '1px solid rgba(225,6,0,0.32)',
   borderRadius: '16px',
-  boxShadow: '0 16px 44px rgba(8, 12, 28, 0.55), 0 6px 22px rgba(99,102,241,0.2)',
+  boxShadow: '0 18px 48px rgba(0,0,0,0.55), 0 8px 26px rgba(225,6,0,0.14)',
   backdropFilter: 'blur(6px)',
 }
 
@@ -96,13 +96,12 @@ const sectionTitleStyle = {
   fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)',
   lineHeight: 1.15,
   textWrap: 'balance',
-  background: 'linear-gradient(90deg, #9fd2ff 0%, #d4b7ff 50%, #ffa0de 100%)',
+  background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
   WebkitBackgroundClip: 'text',
   backgroundClip: 'text',
   color: 'transparent',
 }
 
-// Normaliza un nombre para usarlo como slug de página de Wikipedia
 const slugify = (name = '') =>
   name
     .normalize('NFD')
@@ -110,7 +109,6 @@ const slugify = (name = '') =>
     .trim()
     .replace(/\s+/g, '_')
 
-// Imagen del campeón obtenida desde Wikipedia (con fallback a iniciales)
 const ChampionPhoto = ({ champion }) => {
   const [src, setSrc] = useState(null)
   const [loaded, setLoaded] = useState(false)
@@ -148,12 +146,12 @@ const ChampionPhoto = ({ champion }) => {
     height: '100%',
     minHeight: '120px',
     borderRadius: '10px',
-    border: '1px solid rgba(157, 177, 255, 0.3)',
-    background: 'linear-gradient(140deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
+    border: '1px solid rgba(225,6,0,0.35)',
+    background: 'linear-gradient(140deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95))',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#9fd2ff',
+    color: '#ff8a75',
     fontWeight: 800,
     fontSize: '1.6rem',
   }
@@ -167,94 +165,17 @@ const ChampionPhoto = ({ champion }) => {
       src={src}
       alt={champion}
       loading="lazy"
-      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px', border: '1px solid rgba(157, 177, 255, 0.3)' }}
+      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px', border: '1px solid rgba(225,6,0,0.35)' }}
     />
   )
 }
 
 const F1History = () => {
-  const [currentSeason, setCurrentSeason] = useState(null)
-  const [currentLoading, setCurrentLoading] = useState(true)
-
-  useEffect(() => {
-    const year = new Date().getFullYear()
-    fetch(`${WIKIPEDIA_API}${year}_Formula_One_World_Championship`)
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => {
-        if (data) setCurrentSeason(data)
-      })
-      .catch(() => {})
-      .finally(() => setCurrentLoading(false))
-  }, [])
-
-  const currentExtract = currentSeason && typeof currentSeason.extract === 'string' ? currentSeason.extract : ''
-  const driversBefore = currentExtract.split(" is the reigning World Drivers' Champion")[0]
-  const currentDriversChampion = driversBefore.split(/\.\s+/).pop().trim() || null
-  const constructorsBefore = currentExtract.split(" are the reigning World Constructors' Champions")[0]
-  const currentConstructorsChampion = constructorsBefore.split(/,\s+while\s+/i)[0].trim() || null
-
   return (
     <section id="f1-history" style={{ display: 'grid', gap: '1.5rem' }}>
       <div style={{ textAlign: 'center', display: 'grid', gap: '0.5rem', justifyItems: 'center' }}>
         <h2 style={sectionTitleStyle}>Historia de los Campeonatos</h2>
-        <p style={{ color: '#a5b4fc', fontSize: '1rem', margin: 0 }}>Temporadas completas del Mundial de Fórmula 1</p>
-      </div>
-
-      {/* Temporada actual / en curso */}
-      <div style={cardStyle}>
-        <div
-          style={{
-            padding: '0.8rem 1.2rem',
-            borderBottom: '1px solid rgba(111, 137, 255, 0.28)',
-            background: 'linear-gradient(90deg, rgba(236,72,153,0.2), rgba(139,92,246,0.2), rgba(59,130,246,0.2))',
-            color: '#eaf1ff',
-            textTransform: 'uppercase',
-            letterSpacing: '0.11em',
-            fontSize: '0.8rem',
-            fontWeight: 800,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-          }}
-        >
-          Temporada en curso
-        </div>
-        <div style={{ padding: '1.2rem', display: 'grid', gap: '1rem' }}>
-          {currentLoading ? (
-            <p style={{ color: '#a5b4fc', margin: 0 }}>Consultando la temporada actual...</p>
-          ) : currentSeason ? (
-            <>
-              <h3 style={{ margin: 0, fontSize: '1.6rem' }}>{currentSeason.title}</h3>
-              {currentDriversChampion && (
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                  <div style={{ width: '90px', height: '90px', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(157,177,255,0.3)', background: 'linear-gradient(140deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95))', flexShrink: 0 }}>
-                    <ChampionPhoto champion={currentDriversChampion} />
-                  </div>
-                  <div>
-                    <p style={{ margin: 0, color: '#a5b4fc', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                      Campeón de pilotos
-                    </p>
-                    <h4 style={{ margin: '0.2rem 0', fontSize: '1.4rem' }}>{currentDriversChampion}</h4>
-                  </div>
-                </div>
-              )}
-              {currentConstructorsChampion && (
-                <div>
-                  <p style={{ margin: 0, color: '#a5b4fc', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                    Campeón de constructores
-                  </p>
-                  <h4 style={{ margin: '0.2rem 0', fontSize: '1.4rem' }}>{currentConstructorsChampion}</h4>
-                </div>
-              )}
-              {currentSeason.thumbnail && currentSeason.thumbnail.source && (
-                <img src={currentSeason.thumbnail.source} alt={currentSeason.title} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: '12px', border: '1px solid rgba(157,177,255,0.3)' }} />
-              )}
-              {currentSeason.description && <p style={{ margin: 0, color: '#e2eaff', lineHeight: 1.7 }}>{currentSeason.description}</p>}
-            </>
-          ) : (
-            <p style={{ color: '#fca5a5', margin: 0 }}>No se pudo cargar la temporada actual.</p>
-          )}
-        </div>
+        <p style={{ color: '#b8c2d0', fontSize: '1rem', margin: 0 }}>Línea de tiempo de las temporadas que marcaron la Fórmula 1</p>
       </div>
 
       {/* Línea de tiempo histórica */}
@@ -271,16 +192,16 @@ const F1History = () => {
               flexWrap: 'wrap',
             }}
           >
-            <div style={{ width: '96px', height: '96px', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(157,177,255,0.3)', flexShrink: 0, background: 'linear-gradient(140deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95))' }}>
+            <div style={{ width: '96px', height: '96px', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(225,6,0,0.35)', flexShrink: 0, background: 'linear-gradient(140deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95))' }}>
               <ChampionPhoto champion={c.champion} />
             </div>
             <div style={{ display: 'grid', gap: '0.3rem', flex: 1, minWidth: '240px' }}>
-              <span style={{ color: '#06b6d4', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.08em' }}>{c.year}</span>
+              <span style={{ color: '#ff9a7a', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.08em' }}>{c.year}</span>
               <h3 style={{ margin: 0, fontSize: '1.35rem' }}>{c.champion}</h3>
-              <p style={{ margin: 0, color: '#a5b4fc', fontSize: '0.95rem' }}>Equipo: {c.team}</p>
-              <p style={{ margin: 0, color: '#e2eaff', fontSize: '0.95rem', lineHeight: 1.6 }}>{c.fact}</p>
+              <p style={{ margin: 0, color: '#b8c2d0', fontSize: '0.95rem' }}>Equipo: {c.team}</p>
+              <p style={{ margin: 0, color: '#e8edf5', fontSize: '0.95rem', lineHeight: 1.6 }}>{c.fact}</p>
               {c.titles > 1 && (
-                <p style={{ margin: 0, color: '#d6e3ff', fontSize: '0.9rem', fontStyle: 'italic' }}>
+                <p style={{ margin: 0, color: '#ffd166', fontSize: '0.9rem', fontStyle: 'italic' }}>
                   Total de títulos: {c.titles}
                 </p>
               )}

@@ -73,18 +73,18 @@ const F1News = () => {
   }, [])
 
   const cardStyle = {
-    background: 'linear-gradient(180deg, rgba(13,18,35,0.9) 0%, rgba(10,14,28,0.94) 100%)',
-    border: '1px solid rgba(157, 177, 255, 0.34)',
+    background: 'linear-gradient(180deg, rgba(15,18,27,0.92) 0%, rgba(9,12,20,0.96) 100%)',
+    border: '1px solid rgba(225,6,0,0.32)',
     borderRadius: '16px',
-    boxShadow: '0 16px 44px rgba(8, 12, 28, 0.55), 0 6px 22px rgba(99,102,241,0.2)',
+    boxShadow: '0 18px 48px rgba(0,0,0,0.55), 0 8px 26px rgba(225,6,0,0.14)',
     backdropFilter: 'blur(6px)',
   }
 
   const inputStyle = {
-    background: 'rgba(11,17,34,0.9)',
-    border: '1px solid rgba(111,137,255,0.35)',
+    background: 'rgba(9,12,20,0.95)',
+    border: '1px solid rgba(225,6,0,0.45)',
     borderRadius: '8px',
-    color: '#eaf1ff',
+    color: '#f2f5f9',
     padding: '0.7rem 0.9rem',
     fontSize: '0.95rem',
     outline: 'none',
@@ -93,9 +93,20 @@ const F1News = () => {
   }
 
   const buttonStyle = {
-    background: 'linear-gradient(90deg, #3b82f6 0%, #8b5cf6 55%, #ec4899 100%)',
+    background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
     color: '#fff',
-    border: '1px solid rgba(255,255,255,0.25)',
+    border: '1px solid rgba(255,255,255,0.2)',
+    padding: '0.5rem 1.2rem',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    fontSize: '0.9rem',
+    fontWeight: 700,
+  }
+
+  const outlineBtnStyle = {
+    background: 'transparent',
+    color: '#ff9a7a',
+    border: '1px solid rgba(225,6,0,0.45)',
     padding: '0.5rem 1.2rem',
     borderRadius: '8px',
     cursor: 'pointer',
@@ -103,37 +114,22 @@ const F1News = () => {
     fontWeight: 600,
   }
 
-  const outlineBtnStyle = {
-    background: 'transparent',
-    color: '#a5b4fc',
-    border: '1px solid rgba(111,137,255,0.35)',
-    padding: '0.5rem 1.2rem',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    fontSize: '0.9rem',
-    fontWeight: 600,
+  const sectionTitleStyle = {
+    margin: 0,
+    fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)',
+    lineHeight: 1.15,
+    textWrap: 'balance',
+    background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+    color: 'transparent',
   }
 
   return (
     <section id="f1-news" style={{ display: 'grid', gap: '1rem' }}>
       <div style={{ textAlign: 'center', display: 'grid', gap: '0.5rem', justifyItems: 'center' }}>
-        <h2
-          style={{
-            margin: 0,
-            fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)',
-            lineHeight: 1.15,
-            textWrap: 'balance',
-            background: 'linear-gradient(90deg, #9fd2ff 0%, #d4b7ff 50%, #ffa0de 100%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            color: 'transparent',
-          }}
-        >
-          Noticias de F1
-        </h2>
-        <p style={{ color: '#a5b4fc', fontSize: '1rem', margin: 0 }}>
-          Lo último de las principales fuentes de la Fórmula 1
-        </p>
+        <h2 style={sectionTitleStyle}>Noticias de F1</h2>
+        <p style={{ color: '#b8c2d0', fontSize: '1rem', margin: 0 }}>Lo último de las principales fuentes de la Fórmula 1</p>
       </div>
 
       {/* Buscador */}
@@ -153,31 +149,28 @@ const F1News = () => {
 
       {loading ? (
         <div style={{ ...cardStyle, padding: '1.5rem', textAlign: 'center' }}>
-          <p style={{ color: '#a5b4fc', margin: 0 }}>Buscando noticias...</p>
+          <p style={{ color: '#ff9a7a', margin: 0 }}>Buscando noticias...</p>
         </div>
       ) : error ? (
         <div style={{ ...cardStyle, padding: '1.5rem', textAlign: 'center' }}>
-          <p style={{ color: '#fca5a5', margin: 0 }}>{error}</p>
+          <p style={{ color: '#ff9a7a', margin: 0 }}>{error}</p>
         </div>
       ) : news.length === 0 ? (
         <div style={{ ...cardStyle, padding: '1.5rem', textAlign: 'center' }}>
-          <p style={{ color: '#a5b4fc', margin: 0 }}>No se encontraron noticias para tu búsqueda.</p>
+          <p style={{ color: '#b8c2d0', margin: 0 }}>No se encontraron noticias para tu búsqueda.</p>
         </div>
       ) : (
         <div style={{ display: 'grid', gap: '1rem' }}>
           {news.map((item, idx) => (
-            <article
-              key={item.guid || idx}
-              style={{ ...cardStyle, padding: '1.2rem', display: 'grid', gap: '0.6rem' }}
-            >
+            <article key={item.guid || idx} style={{ ...cardStyle, padding: '1.2rem', display: 'grid', gap: '0.6rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <span
                   style={{
-                    background: 'linear-gradient(90deg, rgba(59,130,246,0.25), rgba(139,92,246,0.25), rgba(236,72,153,0.25))',
-                    border: '1px solid rgba(157, 177, 255, 0.35)',
+                    background: 'linear-gradient(90deg, rgba(225,6,0,0.28), rgba(255,88,0,0.26), rgba(255,176,0,0.22))',
+                    border: '1px solid rgba(225,6,0,0.5)',
                     borderRadius: '20px',
                     padding: '0.25rem 0.8rem',
-                    color: '#eaf1ff',
+                    color: '#ffd9d0',
                     fontSize: '0.75rem',
                     fontWeight: 700,
                     textTransform: 'uppercase',
@@ -186,18 +179,16 @@ const F1News = () => {
                 >
                   Fuente: {item.source}
                 </span>
-                {item.pubDate && <time style={{ color: '#06b6d4', fontSize: '0.85rem', fontWeight: 600 }}>{formatDate(item.pubDate)}</time>}
+                {item.pubDate && <time style={{ color: '#06b6d4', fontSize: '0.85rem', fontWeight: 700 }}>{formatDate(item.pubDate)}</time>}
               </div>
 
               <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                <h3 style={{ margin: 0, fontSize: '1.25rem', lineHeight: 1.35, color: '#eaf1ff' }}>{stripHtml(item.title)}</h3>
+                <h3 style={{ margin: 0, fontSize: '1.25rem', lineHeight: 1.35, color: '#f2f5f9' }}>{stripHtml(item.title)}</h3>
               </a>
 
-              {item.description && (
-                <p style={{ margin: 0, color: '#c7d2fe', lineHeight: 1.65, fontSize: '0.95rem' }}>{stripHtml(item.description)}</p>
-              )}
+              {item.description && <p style={{ margin: 0, color: '#c3cedd', lineHeight: 1.65, fontSize: '0.95rem' }}>{stripHtml(item.description)}</p>}
 
-              <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: '#9fd2ff', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none' }}>
+              <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: '#ff9a7a', fontSize: '0.85rem', fontWeight: 700, textDecoration: 'none' }}>
                 Leer la noticia completa →
               </a>
             </article>
