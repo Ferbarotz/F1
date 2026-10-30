@@ -1,0 +1,69 @@
+const F1Background = () => {
+  const glowA = {
+    position: 'absolute',
+    top: '-12%',
+    left: '-8%',
+    width: '55vw',
+    height: '55vw',
+    borderRadius: '50%',
+    background: 'radial-gradient(circle, rgba(225,6,0,0.34) 0%, rgba(225,6,0,0) 70%)',
+    animation: 'f1GlowA 16s ease-in-out infinite alternate',
+  }
+
+  const glowB = {
+    position: 'absolute',
+    top: '8%',
+    right: '-14%',
+    width: '50vw',
+    height: '50vw',
+    borderRadius: '50%',
+    background: 'radial-gradient(circle, rgba(255,88,0,0.26) 0%, rgba(255,88,0,0) 70%)',
+    animation: 'f1GlowB 21s ease-in-out infinite alternate',
+  }
+
+  const glowC = {
+    position: 'absolute',
+    bottom: '-22%',
+    left: '28%',
+    width: '60vw',
+    height: '60vw',
+    borderRadius: '50%',
+    background: 'radial-gradient(circle, rgba(120,0,0,0.26) 0%, rgba(120,0,0,0) 70%)',
+    animation: 'f1GlowC 26s ease-in-out infinite alternate',
+  }
+
+  const grid = {
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: 'linear-gradient(rgba(225,6,0,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(225,6,0,0.055) 1px, transparent 1px)',
+    backgroundSize: '56px 56px',
+    maskImage: 'radial-gradient(circle at 50% 18%, black 25%, transparent 78%)',
+    WebkitMaskImage: 'radial-gradient(circle at 50% 18%, black 25%, transparent 78%)',
+  }
+
+  return (
+    <>
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: -1,
+          overflow: 'hidden',
+          background: 'linear-gradient(160deg, #05070c 0%, #0a0608 55%, #0c0710 100%)',
+          pointerEvents: 'none',
+        }}
+      >
+        <div style={glowA} />
+        <div style={glowB} />
+        <div style={glowC} />
+        <div style={grid} />
+      </div>
+
+      <style>{`@keyframes f1GlowA { from { transform: translate(0, 0) scale(1); } to { transform: translate(8vw, 6vh) scale(1.12); } }
+@keyframes f1GlowB { from { transform: translate(0, 0) scale(1); } to { transform: translate(-7vw, -5vh) scale(1.1); } }
+@keyframes f1GlowC { from { transform: translate(0, 0) scale(1); } to { transform: translate(5vw, -6vh) scale(1.15); } }`}</style>
+    </>
+  )
+}
+
+export default F1Background

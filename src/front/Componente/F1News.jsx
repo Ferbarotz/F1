@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import F1Background from '../Componente/F1Background'
 
 const buildRssUrl = (query) =>
   `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=en-US&gl=US&ceid=US:en`
@@ -126,7 +127,9 @@ const F1News = () => {
   }
 
   return (
-    <section id="f1-news" style={{ display: 'grid', gap: '1rem' }}>
+    <>
+      <F1Background />
+      <section id="f1-news" style={{ display: 'grid', gap: '1rem' }}>
       <div style={{ textAlign: 'center', display: 'grid', gap: '0.5rem', justifyItems: 'center' }}>
         <h2 style={sectionTitleStyle}>Noticias de F1</h2>
         <p style={{ color: '#b8c2d0', fontSize: '1rem', margin: 0 }}>Lo último de las principales fuentes de la Fórmula 1</p>
@@ -195,7 +198,8 @@ const F1News = () => {
           ))}
         </div>
       )}
-    </section>
+      </section>
+    </>
   )
 }
 

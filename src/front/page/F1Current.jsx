@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Navbar from '../Componente/Navbar'
+import F1Background from '../Componente/F1Background'
 
 const JOLPICA = 'https://api.jolpi.ca/ergast/f1'
 
@@ -178,6 +179,7 @@ const F1Current = () => {
 
   return (
     <div style={pageStyle}>
+      <F1Background />
       <Navbar />
 
       <main style={{ padding: '2rem 1.2rem 3rem', maxWidth: '1000px', margin: '0 auto', display: 'grid', gap: '1.5rem' }}>

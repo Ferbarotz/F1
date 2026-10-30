@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../Componente/Navbar'
+import F1Background from '../Componente/F1Background'
 
 const redGradient = 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)'
 
@@ -59,6 +60,7 @@ const F1Home = () => {
 
   return (
     <div style={pageStyle}>
+      <F1Background />
       <Navbar />
 
       <main style={{ padding: '2.5rem 1.2rem 3rem', maxWidth: '1000px', margin: '0 auto', display: 'grid', gap: '2rem' }}>

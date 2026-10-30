@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import F1Background from '../Componente/F1Background'
 
 const WIKIPEDIA_API = 'https://en.wikipedia.org/api/rest_v1/page/summary/'
 
@@ -172,7 +173,9 @@ const ChampionPhoto = ({ champion }) => {
 
 const F1History = () => {
   return (
-    <section id="f1-history" style={{ display: 'grid', gap: '1.5rem' }}>
+    <>
+      <F1Background />
+      <section id="f1-history" style={{ display: 'grid', gap: '1.5rem' }}>
       <div style={{ textAlign: 'center', display: 'grid', gap: '0.5rem', justifyItems: 'center' }}>
         <h2 style={sectionTitleStyle}>Historia de los Campeonatos</h2>
         <p style={{ color: '#b8c2d0', fontSize: '1rem', margin: 0 }}>Línea de tiempo de las temporadas que marcaron la Fórmula 1</p>
@@ -209,7 +212,8 @@ const F1History = () => {
           </div>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   )
 }
 
