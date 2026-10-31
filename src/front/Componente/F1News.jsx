@@ -74,11 +74,11 @@ const F1News = () => {
   }, [])
 
   const cardStyle = {
-    background: 'linear-gradient(180deg, rgba(15,18,27,0.92) 0%, rgba(9,12,20,0.96) 100%)',
-    border: '1px solid rgba(225,6,0,0.32)',
+    background: 'linear-gradient(180deg, rgba(16,20,30,0.95) 0%, rgba(10,14,22,0.97) 100%)',
+    border: '1px solid rgba(225,6,0,0.45)',
     borderRadius: '16px',
-    boxShadow: '0 18px 48px rgba(0,0,0,0.55), 0 8px 26px rgba(225,6,0,0.14)',
-    backdropFilter: 'blur(6px)',
+    boxShadow: '0 18px 48px rgba(0,0,0,0.6), 0 8px 30px rgba(225,6,0,0.22)',
+    backdropFilter: 'blur(8px)',
   }
 
   const inputStyle = {
@@ -120,6 +120,8 @@ const F1News = () => {
     fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)',
     lineHeight: 1.15,
     textWrap: 'balance',
+    fontWeight: 800,
+    letterSpacing: '-0.01em',
     background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
     WebkitBackgroundClip: 'text',
     backgroundClip: 'text',
