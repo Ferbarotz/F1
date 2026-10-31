@@ -6,7 +6,7 @@ const F1Background = () => {
     width: '55vw',
     height: '55vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(225,6,0,0.46) 0%, rgba(225,6,0,0) 70%)',
+    background: 'radial-gradient(circle, rgba(225,6,0,0.6) 0%, rgba(225,6,0,0) 70%)',
     animation: 'f1GlowA 13s ease-in-out infinite alternate',
   }
 
@@ -17,7 +17,7 @@ const F1Background = () => {
     width: '50vw',
     height: '50vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(255,88,0,0.32) 0%, rgba(255,88,0,0) 70%)',
+    background: 'radial-gradient(circle, rgba(255,88,0,0.45) 0%, rgba(255,88,0,0) 70%)',
     animation: 'f1GlowB 17s ease-in-out infinite alternate',
   }
 
@@ -28,14 +28,14 @@ const F1Background = () => {
     width: '60vw',
     height: '60vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(90,0,10,0.34) 0%, rgba(90,0,10,0) 70%)',
+    background: 'radial-gradient(circle, rgba(90,0,10,0.5) 0%, rgba(90,0,10,0) 70%)',
     animation: 'f1GlowC 21s ease-in-out infinite alternate',
   }
 
   const grid = {
     position: 'absolute',
     inset: 0,
-    backgroundImage: 'linear-gradient(rgba(225,6,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(225,6,0,0.05) 1px, transparent 1px)',
+    backgroundImage: 'linear-gradient(rgba(225,6,0,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(225,6,0,0.09) 1px, transparent 1px)',
     backgroundSize: '56px 56px',
     maskImage: 'radial-gradient(circle at 50% 18%, black 25%, transparent 78%)',
     WebkitMaskImage: 'radial-gradient(circle at 50% 18%, black 25%, transparent 78%)',
