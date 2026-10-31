@@ -32,15 +32,6 @@ const F1Background = () => {
     animation: 'f1GlowC 21s ease-in-out infinite alternate',
   }
 
-  const speedLines = {
-    position: 'absolute',
-    inset: '-10% -5%',
-    backgroundImage:
-      'repeating-linear-gradient(115deg, rgba(225,6,0,0.13) 0px, rgba(225,6,0,0.13) 2px, transparent 2px, transparent 16px)',
-    backgroundSize: '220px 100%',
-    animation: 'f1Speed 2.6s linear infinite',
-  }
-
   const grid = {
     position: 'absolute',
     inset: 0,
@@ -65,14 +56,12 @@ const F1Background = () => {
         <div style={glowA} />
         <div style={glowB} />
         <div style={glowC} />
-        <div style={speedLines} />
         <div style={grid} />
       </div>
 
       <style>{`@keyframes f1GlowA { from { transform: translate(0, 0) scale(1); } to { transform: translate(9vw, 7vh) scale(1.12); } }
 @keyframes f1GlowB { from { transform: translate(0, 0) scale(1); } to { transform: translate(-8vw, -6vh) scale(1.1); } }
-@keyframes f1GlowC { from { transform: translate(0, 0) scale(1); } to { transform: translate(6vw, -7vh) scale(1.15); } }
-@keyframes f1Speed { from { background-position: 0 0; } to { background-position: 700px 0; } }`}</style>
+@keyframes f1GlowC { from { transform: translate(0, 0) scale(1); } to { transform: translate(6vw, -7vh) scale(1.15); } }`}</style>
     </>
   )
 }

@@ -119,6 +119,31 @@ const formatDate = (dateStr) => {
   return parsed.toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' })
 }
 
+const teamColors = {
+  mclaren: '#ff8000',
+  ferrari: '#e8002e',
+  mercedes: '#27f4d2',
+  red_bull: '#3671c6',
+  williams: '#64c4ff',
+  alpine: '#ff87bc',
+  astar: '#7a8dff',
+  haas: '#b6ac9c',
+  audi: '#bb62fa',
+  cadillac: '#e8e8f0',
+  rb: '#4b6cb7',
+}
+
+const teamColor = (id) => teamColors[String(id || '').toLowerCase()] || '#9fd2ff'
+
+const teamInitials = (name = '') =>
+  String(name)
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .map((w) => w[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase() || 'F1'
+
 const F1Current = () => {
   const year = new Date().getFullYear()
   const [standings, setStandings] = useState([])
@@ -254,7 +279,29 @@ const F1Current = () => {
                         <td style={tdStyle}>
                           {s.Driver?.givenName} {s.Driver?.familyName}
                         </td>
-                        <td style={tdStyle}>{s.Constructors?.[0]?.name || '—'}</td>
+                        <td style={tdStyle}>
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.55rem' }}>
+                            <span
+                              style={{
+                                width: '28px',
+                                height: '28px',
+                                borderRadius: '50%',
+                                background: teamColor(s.Constructors?.[0]?.constructorId),
+                                border: '1px solid rgba(255,255,255,0.55)',
+                                color: '#fff',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontWeight: 800,
+                                fontSize: '0.68rem',
+                                letterSpacing: '0.02em',
+                              }}
+                            >
+                              {teamInitials(s.Constructors?.[0]?.name)}
+                            </span>
+                            <span>{s.Constructors?.[0]?.name || '—'}</span>
+                          </span>
+                        </td>
                         <td style={tdStyle}>{s.points}</td>
                         <td style={tdStyle}>{s.wins}</td>
                       </tr>
