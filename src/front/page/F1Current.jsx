@@ -24,6 +24,8 @@ const sectionTitleStyle = {
   fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)',
   lineHeight: 1.15,
   textWrap: 'balance',
+  fontWeight: 800,
+  letterSpacing: '-0.01em',
   background: redGradient,
   WebkitBackgroundClip: 'text',
   backgroundClip: 'text',
@@ -31,23 +33,23 @@ const sectionTitleStyle = {
 }
 
 const cardStyle = {
-  background: 'linear-gradient(180deg, rgba(15,18,27,0.92) 0%, rgba(9,12,20,0.96) 100%)',
-  border: '1px solid rgba(225,6,0,0.32)',
+  background: 'linear-gradient(180deg, rgba(16,20,30,0.95) 0%, rgba(10,14,22,0.97) 100%)',
+  border: '1px solid rgba(225,6,0,0.45)',
   borderRadius: '16px',
-  boxShadow: '0 18px 48px rgba(0,0,0,0.55), 0 8px 26px rgba(225,6,0,0.14)',
-  backdropFilter: 'blur(6px)',
+  boxShadow: '0 18px 48px rgba(0,0,0,0.6), 0 8px 30px rgba(225,6,0,0.22)',
+  backdropFilter: 'blur(8px)',
 }
 
 const badgeStyle = {
   display: 'inline-block',
-  background: 'linear-gradient(90deg, rgba(225,6,0,0.3), rgba(255,88,0,0.26))',
-  border: '1px solid rgba(225,6,0,0.6)',
-  color: '#ffb4a2',
-  padding: '0.3rem 0.9rem',
+  background: 'linear-gradient(90deg, rgba(225,6,0,0.38), rgba(255,88,0,0.32))',
+  border: '1px solid rgba(225,6,0,0.65)',
+  color: '#ff9a7a',
+  padding: '0.35rem 0.95rem',
   borderRadius: '20px',
-  fontSize: '0.72rem',
+  fontSize: '0.74rem',
   fontWeight: 800,
-  letterSpacing: '0.12em',
+  letterSpacing: '0.1em',
   textTransform: 'uppercase',
 }
 
@@ -70,18 +72,20 @@ const tableWrapStyle = { overflowX: 'auto' }
 const tableStyle = { width: '100%', borderCollapse: 'collapse', minWidth: '560px' }
 const thStyle = {
   textAlign: 'left',
-  padding: '0.7rem 0.8rem',
-  color: '#ff9a7a',
+  padding: '0.75rem 0.8rem',
+  color: '#ff8a75',
   fontSize: '0.75rem',
+  fontWeight: 700,
   textTransform: 'uppercase',
   letterSpacing: '0.08em',
-  borderBottom: '1px solid rgba(225,6,0,0.35)',
+  borderBottom: '1px solid rgba(225,6,0,0.45)',
 }
 const tdStyle = {
-  padding: '0.65rem 0.8rem',
-  borderBottom: '1px solid rgba(255,255,255,0.06)',
+  padding: '0.7rem 0.8rem',
+  borderBottom: '1px solid rgba(255,255,255,0.07)',
   color: '#e8edf5',
   fontSize: '0.95rem',
+  fontWeight: 500,
 }
 
 const podiumColors = ['#FFD700', '#C0C0C0', '#CD7F32']
@@ -218,6 +222,8 @@ const F1Current = () => {
               fontSize: 'clamp(2.2rem, 5.5vw, 3.4rem)',
               lineHeight: 1.05,
               textWrap: 'balance',
+              fontWeight: 800,
+              letterSpacing: '-0.01em',
               background: redGradient,
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
