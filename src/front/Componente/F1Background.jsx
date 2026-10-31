@@ -6,7 +6,7 @@ const F1Background = () => {
     width: '55vw',
     height: '55vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(225,6,0,0.6) 0%, rgba(225,6,0,0) 70%)',
+    background: 'radial-gradient(circle, rgba(225,6,0,0.72) 0%, rgba(225,6,0,0) 70%)',
     animation: 'f1GlowA 13s ease-in-out infinite alternate',
   }
 
@@ -17,7 +17,7 @@ const F1Background = () => {
     width: '50vw',
     height: '50vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(255,88,0,0.45) 0%, rgba(255,88,0,0) 70%)',
+    background: 'radial-gradient(circle, rgba(255,88,0,0.58) 0%, rgba(255,88,0,0) 70%)',
     animation: 'f1GlowB 17s ease-in-out infinite alternate',
   }
 
@@ -28,7 +28,7 @@ const F1Background = () => {
     width: '60vw',
     height: '60vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(90,0,10,0.5) 0%, rgba(90,0,10,0) 70%)',
+    background: 'radial-gradient(circle, rgba(90,0,10,0.62) 0%, rgba(90,0,10,0) 70%)',
     animation: 'f1GlowC 21s ease-in-out infinite alternate',
   }
 
