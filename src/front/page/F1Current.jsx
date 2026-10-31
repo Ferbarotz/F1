@@ -283,21 +283,23 @@ const F1Current = () => {
                           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.55rem' }}>
                             <span
                               style={{
-                                width: '28px',
-                                height: '28px',
+                                width: '30px',
+                                height: '30px',
                                 borderRadius: '50%',
                                 background: '#f8fafc',
                                 border: `2px solid ${teamColor(s.Constructors?.[0]?.constructorId)}`,
-                                color: teamColor(s.Constructors?.[0]?.constructorId),
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                fontWeight: 800,
-                                fontSize: '0.68rem',
-                                letterSpacing: '0.02em',
+                                overflow: 'hidden',
+                                flexShrink: 0,
                               }}
                             >
-                              {teamInitials(s.Constructors?.[0]?.name)}
+                              <img
+                                src="/shield.png"
+                                alt="Escudo de la escudería"
+                                style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+                              />
                             </span>
                             <span>{s.Constructors?.[0]?.name || '—'}</span>
                           </span>
