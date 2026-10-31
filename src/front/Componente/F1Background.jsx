@@ -6,8 +6,8 @@ const F1Background = () => {
     width: '55vw',
     height: '55vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(139,92,246,0.34) 0%, rgba(139,92,246,0) 70%)',
-    animation: 'f1GlowA 18s ease-in-out infinite alternate',
+    background: 'radial-gradient(circle, rgba(225,6,0,0.46) 0%, rgba(225,6,0,0) 70%)',
+    animation: 'f1GlowA 13s ease-in-out infinite alternate',
   }
 
   const glowB = {
@@ -17,8 +17,8 @@ const F1Background = () => {
     width: '50vw',
     height: '50vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(59,130,246,0.28) 0%, rgba(59,130,246,0) 70%)',
-    animation: 'f1GlowB 22s ease-in-out infinite alternate',
+    background: 'radial-gradient(circle, rgba(255,88,0,0.32) 0%, rgba(255,88,0,0) 70%)',
+    animation: 'f1GlowB 17s ease-in-out infinite alternate',
   }
 
   const glowC = {
@@ -28,14 +28,23 @@ const F1Background = () => {
     width: '60vw',
     height: '60vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(225,6,0,0.26) 0%, rgba(225,6,0,0) 70%)',
-    animation: 'f1GlowC 25s ease-in-out infinite alternate',
+    background: 'radial-gradient(circle, rgba(90,0,10,0.34) 0%, rgba(90,0,10,0) 70%)',
+    animation: 'f1GlowC 21s ease-in-out infinite alternate',
+  }
+
+  const speedLines = {
+    position: 'absolute',
+    inset: '-10% -5%',
+    backgroundImage:
+      'repeating-linear-gradient(115deg, rgba(225,6,0,0.13) 0px, rgba(225,6,0,0.13) 2px, transparent 2px, transparent 16px)',
+    backgroundSize: '220px 100%',
+    animation: 'f1Speed 2.6s linear infinite',
   }
 
   const grid = {
     position: 'absolute',
     inset: 0,
-    backgroundImage: 'linear-gradient(rgba(139,92,246,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.06) 1px, transparent 1px)',
+    backgroundImage: 'linear-gradient(rgba(225,6,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(225,6,0,0.05) 1px, transparent 1px)',
     backgroundSize: '56px 56px',
     maskImage: 'radial-gradient(circle at 50% 18%, black 25%, transparent 78%)',
     WebkitMaskImage: 'radial-gradient(circle at 50% 18%, black 25%, transparent 78%)',
@@ -49,19 +58,21 @@ const F1Background = () => {
           inset: 0,
           zIndex: -1,
           overflow: 'hidden',
-          background: 'linear-gradient(160deg, #05060c 0%, #0a0512 55%, #0d0716 100%)',
+          background: 'linear-gradient(160deg, #04060c 0%, #0a0510 55%, #0c0610 100%)',
           pointerEvents: 'none',
         }}
       >
         <div style={glowA} />
         <div style={glowB} />
         <div style={glowC} />
+        <div style={speedLines} />
         <div style={grid} />
       </div>
 
       <style>{`@keyframes f1GlowA { from { transform: translate(0, 0) scale(1); } to { transform: translate(9vw, 7vh) scale(1.12); } }
 @keyframes f1GlowB { from { transform: translate(0, 0) scale(1); } to { transform: translate(-8vw, -6vh) scale(1.1); } }
-@keyframes f1GlowC { from { transform: translate(0, 0) scale(1); } to { transform: translate(6vw, -7vh) scale(1.15); } }`}</style>
+@keyframes f1GlowC { from { transform: translate(0, 0) scale(1); } to { transform: translate(6vw, -7vh) scale(1.15); } }
+@keyframes f1Speed { from { background-position: 0 0; } to { background-position: 700px 0; } }`}</style>
     </>
   )
 }
