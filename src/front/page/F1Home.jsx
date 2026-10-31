@@ -6,6 +6,8 @@ const redGradient = 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100
 
 const pageStyle = {
   minHeight: '100vh',
+  position: 'relative',
+  zIndex: 1,
   color: '#f2f5f9',
   fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
   backgroundImage:

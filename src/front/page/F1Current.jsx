@@ -6,6 +6,8 @@ const JOLPICA = 'https://api.jolpi.ca/ergast/f1'
 
 const pageStyle = {
   minHeight: '100vh',
+  position: 'relative',
+  zIndex: 1,
   color: '#f2f5f9',
   fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
   backgroundImage:

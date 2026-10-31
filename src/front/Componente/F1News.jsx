@@ -129,7 +129,7 @@ const F1News = () => {
   return (
     <>
       <F1Background />
-      <section id="f1-news" style={{ display: 'grid', gap: '1rem' }}>
+      <section id="f1-news" style={{ display: 'grid', gap: '1rem', position: 'relative', zIndex: 1 }}>
       <div style={{ textAlign: 'center', display: 'grid', gap: '0.5rem', justifyItems: 'center' }}>
         <h2 style={sectionTitleStyle}>Noticias de F1</h2>
         <p style={{ color: '#b8c2d0', fontSize: '1rem', margin: 0 }}>Lo último de las principales fuentes de la Fórmula 1</p>

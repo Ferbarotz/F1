@@ -175,7 +175,7 @@ const F1History = () => {
   return (
     <>
       <F1Background />
-      <section id="f1-history" style={{ display: 'grid', gap: '1.5rem' }}>
+      <section id="f1-history" style={{ display: 'grid', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
       <div style={{ textAlign: 'center', display: 'grid', gap: '0.5rem', justifyItems: 'center' }}>
         <h2 style={sectionTitleStyle}>Historia de los Campeonatos</h2>
         <p style={{ color: '#b8c2d0', fontSize: '1rem', margin: 0 }}>Línea de tiempo de las temporadas que marcaron la Fórmula 1</p>
