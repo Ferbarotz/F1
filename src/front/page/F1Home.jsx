@@ -62,67 +62,48 @@ const F1Home = () => {
       <Navbar />
 
       <main style={{ padding: '2.5rem 1.2rem 3rem', maxWidth: '1000px', margin: '0 auto', display: 'grid', gap: '2rem' }}>
-        <section style={{ textAlign: 'center', display: 'grid', gap: '0.9rem', justifyItems: 'center' }}>
+        <section style={{ display: 'grid', gap: '1.2rem', justifyItems: 'center', alignContent: 'center', minHeight: '55vh', textAlign: 'center', padding: '2rem 0' }}>
+          <span
+            style={{
+              background: 'linear-gradient(90deg, rgba(225,6,0,0.38), rgba(255,88,0,0.32))',
+              border: '1px solid rgba(225,6,0,0.65)',
+              borderRadius: '20px',
+              padding: '0.35rem 0.95rem',
+              color: '#ff9a7a',
+              fontSize: '0.74rem',
+              fontWeight: 800,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Explora
+          </span>
           <h1
             style={{
               margin: 0,
-              fontSize: 'clamp(2.4rem, 6vw, 4rem)',
+              fontSize: 'clamp(2.2rem, 5.5vw, 3.4rem)',
               lineHeight: 1.05,
               textWrap: 'balance',
               fontWeight: 800,
               letterSpacing: '-0.01em',
-              background: 'linear-gradient(90deg, #E10600 0%, #FF5800 55%, #FFB000 100%)',
+              background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               color: 'transparent',
             }}
           >
-            Fórmula 1
+            Pit Lane F1
           </h1>
-          <p style={{ color: '#c3cedd', fontSize: '1.08rem', margin: 0, maxWidth: '620px', lineHeight: 1.7 }}>
-            La historia de los campeones, el campeonato en curso con todos los puntos, y las noticias más frescas de la máxima categoría del automovilismo.
+          <p style={{ color: '#c3cedd', fontSize: '1rem', margin: 0, maxWidth: '620px', lineHeight: 1.7 }}>
+            Elige una sección para seguir interactuando.
           </p>
-          <p style={{ color: '#ff9a7a', fontSize: '0.9rem', fontWeight: 700, margin: 0, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-            Actualizado en vivo
-          </p>
+          <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '0.4rem' }}>
+            <Link to="/noticias" style={{ ...ctaStyle, marginTop: 0 }}>Noticias</Link>
+            <Link to="/temporada" style={{ ...ctaStyle, marginTop: 0 }}>Temporada Actual</Link>
+            <Link to="/historia" style={{ ...ctaStyle, marginTop: 0 }}>Historia</Link>
+          </div>
         </section>
 
-        <div style={{ display: 'grid', gap: '1.2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-          {cards.map((c) => (
-            <Link
-              key={c.to}
-              to={c.to}
-              style={{
-                ...cardStyle,
-                padding: '1.5rem',
-                textDecoration: 'none',
-                color: 'inherit',
-                display: 'grid',
-                gap: '0.4rem',
-                justifyItems: 'start',
-              }}
-            >
-              <span
-                style={{
-                  background: 'linear-gradient(90deg, rgba(225,6,0,0.38), rgba(255,88,0,0.32))',
-                  border: '1px solid rgba(225,6,0,0.65)',
-                  borderRadius: '20px',
-                  padding: '0.35rem 0.95rem',
-                  color: '#ff9a7a',
-                  fontSize: '0.74rem',
-                  fontWeight: 800,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {c.tag}
-              </span>
-              <h2 style={{ margin: 0, fontSize: '1.6rem' }}>{c.title}</h2>
-              <p style={{ margin: 0, color: '#b8c2d0', lineHeight: 1.6 }}>{c.desc}</p>
-              <span style={{ ...ctaStyle, marginTop: '0.8rem' }}>Explorar →</span>
-            </Link>
-          ))}
-        </div>
       </main>
     </div>
   )
