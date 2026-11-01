@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../Componente/Navbar'
 import F1Background from '../Componente/F1Background'
@@ -35,6 +36,34 @@ const ctaStyle = {
 }
 
 const F1Home = () => {
+  const [slide, setSlide] = useState(0)
+  const slides = [
+    { label: 'Pole Position', bg: 'linear-gradient(135deg, rgba(225,6,0,0.55), rgba(255,88,0,0.4))' },
+    { label: 'Pit Wall', bg: 'linear-gradient(135deg, rgba(90,0,20,0.8), rgba(225,6,0,0.5))' },
+    { label: 'Checkered Flag', bg: 'linear-gradient(135deg, rgba(120,10,20,0.85), rgba(60,5,12,0.9))' },
+  ]
+  const carouselBtnStyle = {
+    width: '38px',
+    height: '38px',
+    borderRadius: '50%',
+    border: '1px solid rgba(225,6,0,0.65)',
+    background: 'linear-gradient(90deg, rgba(225,6,0,0.38), rgba(255,88,0,0.32))',
+    color: '#fff',
+    fontSize: '1.1rem',
+    cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+  const carouselIndicatorStyle = {
+    width: '10px',
+    height: '10px',
+    borderRadius: '50%',
+    border: 'none',
+    cursor: 'pointer',
+    background: 'rgba(255,255,255,0.25)',
+    padding: 0,
+  }
   const cards = [
     {
       to: '/temporada',
@@ -62,45 +91,40 @@ const F1Home = () => {
       <Navbar />
 
       <main style={{ padding: '2.5rem 1.2rem 3rem', maxWidth: '1000px', margin: '0 auto', display: 'grid', gap: '2rem' }}>
-        <section style={{ display: 'grid', gap: '1.2rem', justifyItems: 'center', alignContent: 'center', minHeight: '55vh', textAlign: 'center', padding: '2rem 0' }}>
-          <span
+        <section style={{ display: 'grid', gap: '1rem', justifyItems: 'center', alignContent: 'start', padding: '2rem 0', width: 'min(920px, 100%)' }}>
+          <div
             style={{
-              background: 'linear-gradient(90deg, rgba(225,6,0,0.38), rgba(255,88,0,0.32))',
-              border: '1px solid rgba(225,6,0,0.65)',
+              width: '100%',
               borderRadius: '20px',
-              padding: '0.35rem 0.95rem',
-              color: '#ff9a7a',
-              fontSize: '0.74rem',
-              fontWeight: 800,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
+              overflow: 'hidden',
+              border: '1px solid rgba(225,6,0,0.45)',
+              boxShadow: '0 18px 48px rgba(0,0,0,0.6), 0 8px 30px rgba(225,6,0,0.22)',
             }}
           >
-            Explora
-          </span>
-          <h1
-            style={{
-              margin: 0,
-              fontSize: 'clamp(2.2rem, 5.5vw, 3.4rem)',
-              lineHeight: 1.05,
-              textWrap: 'balance',
-              fontWeight: 800,
-              letterSpacing: '-0.01em',
-              background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              color: 'transparent',
-            }}
-          >
-            Pit Lane F1
-          </h1>
-          <p style={{ color: '#c3cedd', fontSize: '1rem', margin: 0, maxWidth: '620px', lineHeight: 1.7 }}>
-            Elige una sección para seguir interactuando.
-          </p>
-          <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '0.4rem' }}>
-            <Link to="/noticias" style={{ ...ctaStyle, marginTop: 0 }}>Noticias</Link>
-            <Link to="/temporada" style={{ ...ctaStyle, marginTop: 0 }}>Temporada Actual</Link>
-            <Link to="/historia" style={{ ...ctaStyle, marginTop: 0 }}>Historia</Link>
+            <div style={{ display: 'flex', transition: 'transform 0.6s ease', transform: `translateX(-${slide * 100}%)` }}>
+              {slides.map((s, i) => (
+                <div key={i} style={{ minWidth: '100%', height: '360px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: s.bg }}>
+                  <span style={{ color: '#fff', fontSize: '1.6rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', textAlign: 'center', padding: '0 1rem' }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+            <div style={{ display: 'flex', gap: '0.6rem' }}>
+              <button type="button" onClick={() => setSlide((slide - 1 + slides.length) % slides.length)} style={carouselBtnStyle}>‹</button>
+              <button type="button" onClick={() => setSlide((slide + 1) % slides.length)} style={carouselBtnStyle}>›</button>
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              {slides.map((s, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Slide ${i + 1}`}
+                  onClick={() => setSlide(i)}
+                  style={{ ...carouselIndicatorStyle, background: i === slide ? '#E10600' : 'rgba(255,255,255,0.25)' }}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
