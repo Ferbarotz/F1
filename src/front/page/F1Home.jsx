@@ -38,9 +38,17 @@ const ctaStyle = {
 const F1Home = () => {
   const [slide, setSlide] = useState(0)
   const slides = [
-    { label: 'Pole Position', bg: 'linear-gradient(135deg, rgba(225,6,0,0.55), rgba(255,88,0,0.4))' },
-    { label: 'Pit Wall', bg: 'linear-gradient(135deg, rgba(90,0,20,0.8), rgba(225,6,0,0.5))' },
-    { label: 'Checkered Flag', bg: 'linear-gradient(135deg, rgba(120,10,20,0.85), rgba(60,5,12,0.9))' },
+    { team: 'McLaren', img: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
+    { team: 'Ferrari', img: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG' },
+    { team: 'Mercedes', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Mercedes_F1_car_01.jpg' },
+    { team: 'Red Bull Racing', img: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/F1_valencia-2010_%282%29.JPG' },
+    { team: 'Williams', img: 'https://upload.wikimedia.org/wikipedia/commons/8/82/2017_FIA_Masters_Historic_Formula_One_Championship%2C_Circuit_of_the_Americas_%2823970292508%29.jpg' },
+    { team: 'Racing Bulls', img: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Manoir_De_l%27Automobile%27s_Formula_One_Room.jpg' },
+    { team: 'Alpine', img: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/2015_Malaysian_GP_opening_lap.jpg' },
+    { team: 'Aston Martin', img: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Hungaroring_%2C_Formula-1_sculpture_%28Ank_kumar%29_04.jpg' },
+    { team: 'Haas', img: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Cosworth_four-wheel-drive_F1_car_%2814662199881%29.jpg' },
+    { team: 'Audi', img: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Formula_One_Car_Mural_%28Duro%2C_2018%29.jpg' },
+    { team: 'Cadillac', img: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Mercedes_F1_W03_Petronas_Schumacher_%282%29.jpg' },
   ]
   const carouselBtnStyle = {
     width: '38px',
@@ -103,8 +111,10 @@ const F1Home = () => {
           >
             <div style={{ display: 'flex', transition: 'transform 0.6s ease', transform: `translateX(-${slide * 100}%)` }}>
               {slides.map((s, i) => (
-                <div key={i} style={{ minWidth: '100%', height: '360px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: s.bg }}>
-                  <span style={{ color: '#fff', fontSize: '1.6rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', textAlign: 'center', padding: '0 1rem' }}>{s.label}</span>
+                <div key={i} style={{ minWidth: '100%', height: '360px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0508' }}>
+                  <img src={s.img} alt={s.team} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(4,6,12,0.1) 0%, rgba(4,6,12,0.85) 100%)' }} />
+                  <span style={{ position: 'absolute', bottom: '1rem', left: '1.2rem', color: '#fff', fontSize: '1.5rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>{s.team}</span>
                 </div>
               ))}
             </div>
