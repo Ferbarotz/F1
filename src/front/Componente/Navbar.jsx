@@ -17,6 +17,7 @@ const Navbar = () => {
     borderRadius: '8px',
     border: '1px solid rgba(225, 6, 0, 0.4)',
     background: 'rgba(225, 6, 0, 0.08)',
+    fontFamily: "'Rajdhani', 'Inter', system-ui, sans-serif",
   }
 
   const activeLinkStyle = {
@@ -24,6 +25,7 @@ const Navbar = () => {
     background: 'linear-gradient(90deg, rgba(225, 6, 0, 0.35), rgba(255, 88, 0, 0.3))',
     border: '1px solid rgba(225, 6, 0, 0.75)',
     color: '#fff',
+    fontFamily: "'Rajdhani', 'Inter', system-ui, sans-serif",
   }
 
   return (
@@ -40,6 +42,7 @@ const Navbar = () => {
         position: 'sticky',
         top: 0,
         zIndex: 10,
+        fontFamily: "'Rajdhani', 'Inter', system-ui, sans-serif",
       }}
     >
       <Link
@@ -48,6 +51,7 @@ const Navbar = () => {
           fontSize: '1.55rem',
           fontWeight: 900,
           letterSpacing: '0.02em',
+          fontFamily: "'Rajdhani', 'Inter', system-ui, sans-serif",
           background: 'linear-gradient(90deg, #E10600 0%, #FF5800 60%, #FFB000 100%)',
           WebkitBackgroundClip: 'text',
           backgroundClip: 'text',
