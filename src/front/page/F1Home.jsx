@@ -38,17 +38,17 @@ const ctaStyle = {
 const F1Home = () => {
   const [slide, setSlide] = useState(0)
   const slides = [
-    { team: 'Fórmula 1 · 2026', img: 'https://hips.hearstapps.com/hmg-prod/images/collage-r2d-6989a8401d3b3.jpg?crop=1.00xw:0.889xh;0.0684xh&resize=1200:*' },
-    { team: 'Red Bull Racing', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/red-bull-racing-logo-2.webp' },
-    { team: 'Racing Bulls', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/racing-bulls-logo-2.webp' },
-    { team: 'Haas', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/haas-logo-2.webp' },
-    { team: 'Audi', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/audi-logo-2.webp' },
-    { team: 'Mercedes', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/mercedes-logo-2.webp' },
-    { team: 'Alpine', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp' },
-    { team: 'Ferrari', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/ferrari-logo-2.webp' },
-    { team: 'Williams', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/williams-logo-2.webp' },
-    { team: 'Cadillac', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/cadillac-logo-2.webp' },
-    { team: 'Aston Martin', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/aston-martin-logo-2.webp' },
+    { team: 'Red Bull Racing', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/red-bull-racing-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/red-bull-racing-logo-2.webp' },
+    { team: 'Racing Bulls', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/racing-bulls-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/racing-bulls-logo-2.webp' },
+    { team: 'Haas', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/haas-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/haas-logo-2.webp' },
+    { team: 'Audi', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/audi-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/audi-logo-2.webp' },
+    { team: 'Mercedes', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/mercedes-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/mercedes-logo-2.webp' },
+    { team: 'Alpine', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp' },
+    { team: 'Ferrari', car: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/ferrari-logo-2.webp' },
+    { team: 'Williams', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/williams-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/williams-logo-2.webp' },
+    { team: 'Cadillac', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/cadillac-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/cadillac-logo-2.webp' },
+    { team: 'Aston Martin', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/aston-martin-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/aston-martin-logo-2.webp' },
+    { team: 'McLaren', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/mclaren-logo-2.webp' },
   ]
   const carouselBtnStyle = {
     width: '38px',
@@ -110,13 +110,26 @@ const F1Home = () => {
             }}
           >
             <div style={{ display: 'flex', transition: 'transform 0.6s ease', transform: `translateX(-${slide * 100}%)` }}>
-              {slides.map((s, i) => (
-                <div key={i} style={{ minWidth: '100%', height: '360px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0508' }}>
-                  <img src={s.img} alt={s.team} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(4,6,12,0.1) 0%, rgba(4,6,12,0.85) 100%)' }} />
-                  <span style={{ position: 'absolute', bottom: '1rem', left: '1.2rem', color: '#fff', fontSize: '1.5rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>{s.team}</span>
-                </div>
-              ))}
+              {slides.map((s, i) => {
+                const isTop = i % 4 < 2
+                const isLeft = i % 2 === 0
+                const logoStyle = {
+                  position: 'absolute',
+                  ...(isTop ? { top: '10%' } : { bottom: '14%' }),
+                  ...(isLeft ? { left: '10%' } : { right: '10%' }),
+                  width: '120px',
+                  objectFit: 'contain',
+                  zIndex: 2,
+                }
+                return (
+                  <div key={i} style={{ minWidth: '100%', height: '360px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0508' }}>
+                    <img src={s.car} alt={s.team} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(4,6,12,0.1) 0%, rgba(4,6,12,0.85) 100%)' }} />
+                    <img src={s.logo} alt={`${s.team} logo`} style={logoStyle} />
+                    <span style={{ position: 'absolute', bottom: '1rem', left: '1.2rem', color: '#fff', fontSize: '1.5rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>{s.team}</span>
+                  </div>
+                )
+              })}
             </div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
