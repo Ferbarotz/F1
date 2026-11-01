@@ -55,7 +55,7 @@ const Navbar = () => {
           textDecoration: 'none',
         }}
       >
-        F1
+        Pit Lane F1
       </Link>
 
       <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
