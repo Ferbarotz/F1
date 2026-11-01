@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
+  const location = useLocation()
   const links = [
     { to: '/', label: 'Inicio' },
     { to: '/temporada', label: 'Temporada Actual' },
@@ -62,7 +63,7 @@ const Navbar = () => {
 
       <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
         {links.map((l) => (
-          <Link key={l.to} to={l.to} style={l.to === '/' ? activeLinkStyle : baseLinkStyle}>
+          <Link key={l.to} to={l.to} style={location.pathname === l.to ? activeLinkStyle : baseLinkStyle}>
             {l.label}
           </Link>
         ))}

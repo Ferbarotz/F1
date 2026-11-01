@@ -49,7 +49,7 @@
           inset: 0,
           zIndex: -1,
           overflow: 'hidden',
-          background: '#12060c',
+          background: 'transparent',
           pointerEvents: 'none',
         }}
       />
