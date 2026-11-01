@@ -38,17 +38,17 @@ const ctaStyle = {
 const F1Home = () => {
   const [slide, setSlide] = useState(0)
   const slides = [
-    { team: 'Red Bull Racing', car: 'https://upload.wikimedia.org/wikipedia/en/f/fa/Red_Bull_Racing_Logo_2026.svg', logo: 'https://upload.wikimedia.org/wikipedia/en/f/fa/Red_Bull_Racing_Logo_2026.svg' },
-    { team: 'Racing Bulls', car: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/VCARB_F1_logo.svg/330px-VCARB_F1_logo.svg.png', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/VCARB_F1_logo.svg/330px-VCARB_F1_logo.svg.png' },
+    { team: 'Red Bull Racing', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
+    { team: 'Racing Bulls', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
     { team: 'Haas', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Audi', car: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Das_Audi_Forum_Ingolstadt.JPG/330px-Das_Audi_Forum_Ingolstadt.JPG', logo: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Das_Audi_Forum_Ingolstadt.JPG/330px-Das_Audi_Forum_Ingolstadt.JPG' },
+    { team: 'Audi', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
     { team: 'Mercedes', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
     { team: 'Alpine', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp' },
-    { team: 'Ferrari', car: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG', logo: 'https://upload.wikimedia.org/wikipedia/en/3/36/Prancing_horse.svg' },
+    { team: 'Ferrari', car: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG' },
     { team: 'Williams', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Cadillac', car: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Cadillac_logo_BW.svg/330px-Cadillac_logo_BW.svg.png', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Cadillac_logo_BW.svg/330px-Cadillac_logo_BW.svg.png' },
+    { team: 'Cadillac', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
     { team: 'Aston Martin', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'McLaren', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/en/0/03/McLarenF1Team.png' },
+    { team: 'McLaren', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
   ]
   const carouselBtnStyle = {
     width: '38px',
