@@ -10,11 +10,7 @@ const pageStyle = {
   zIndex: 1,
   color: '#f2f5f9',
   fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
-  backgroundImage:
-    'linear-gradient(160deg, rgba(5,7,12,0.94) 0%, rgba(9,5,8,0.95) 60%, rgba(12,8,16,0.96) 100%), radial-gradient(circle at 15% 6%, rgba(225,6,0,0.30), transparent 45%), radial-gradient(circle at 88% 0%, rgba(255,88,0,0.20), transparent 40%)',
-  backgroundSize: 'cover, cover, cover',
-  backgroundPosition: 'center, center, center',
-  backgroundAttachment: 'fixed',
+  backgroundImage: 'none',
 }
 
 const cardStyle = {
