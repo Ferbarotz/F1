@@ -38,17 +38,17 @@ const ctaStyle = {
 const F1Home = () => {
   const [slide, setSlide] = useState(0)
   const slides = [
-    { team: 'McLaren', img: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Ferrari', img: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG' },
-    { team: 'Mercedes', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Mercedes_F1_car_01.jpg' },
-    { team: 'Red Bull Racing', img: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/F1_valencia-2010_%282%29.JPG' },
-    { team: 'Williams', img: 'https://upload.wikimedia.org/wikipedia/commons/8/82/2017_FIA_Masters_Historic_Formula_One_Championship%2C_Circuit_of_the_Americas_%2823970292508%29.jpg' },
-    { team: 'Racing Bulls', img: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Manoir_De_l%27Automobile%27s_Formula_One_Room.jpg' },
-    { team: 'Alpine', img: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/2015_Malaysian_GP_opening_lap.jpg' },
-    { team: 'Aston Martin', img: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Hungaroring_%2C_Formula-1_sculpture_%28Ank_kumar%29_04.jpg' },
-    { team: 'Haas', img: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Cosworth_four-wheel-drive_F1_car_%2814662199881%29.jpg' },
-    { team: 'Audi', img: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Formula_One_Car_Mural_%28Duro%2C_2018%29.jpg' },
-    { team: 'Cadillac', img: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Mercedes_F1_W03_Petronas_Schumacher_%282%29.jpg' },
+    { team: 'Fórmula 1 · 2026', img: 'https://hips.hearstapps.com/hmg-prod/images/collage-r2d-6989a8401d3b3.jpg?crop=1.00xw:0.889xh;0.0684xh&resize=1200:*' },
+    { team: 'Red Bull Racing', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/red-bull-racing-logo-2.webp' },
+    { team: 'Racing Bulls', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/racing-bulls-logo-2.webp' },
+    { team: 'Haas', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/haas-logo-2.webp' },
+    { team: 'Audi', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/audi-logo-2.webp' },
+    { team: 'Mercedes', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/mercedes-logo-2.webp' },
+    { team: 'Alpine', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp' },
+    { team: 'Ferrari', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/ferrari-logo-2.webp' },
+    { team: 'Williams', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/williams-logo-2.webp' },
+    { team: 'Cadillac', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/cadillac-logo-2.webp' },
+    { team: 'Aston Martin', img: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/aston-martin-logo-2.webp' },
   ]
   const carouselBtnStyle = {
     width: '38px',
