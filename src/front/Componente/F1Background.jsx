@@ -49,19 +49,10 @@
           inset: 0,
           zIndex: -1,
           overflow: 'hidden',
-          background: 'linear-gradient(160deg, #0a0508 0%, #12060c 55%, #150a0c 100)',
+          background: '#07050a',
           pointerEvents: 'none',
         }}
-      >
-        <div style={glowA} />
-        <div style={glowB} />
-        <div style={glowC} />
-        <div style={grid} />
-      </div>
-
-      <style>{`@keyframes f1GlowA { from { transform: translate(0, 0) scale(1); } to { transform: translate(9vw, 7vh) scale(1.12); } }
-@keyframes f1GlowB { from { transform: translate(0, 0) scale(1); } to { transform: translate(-8vw, -6vh) scale(1.1); } }
-@keyframes f1GlowC { from { transform: translate(0, 0) scale(1); } to { transform: translate(6vw, -7vh) scale(1.15); } }`}</style>
+      />
     </>
   )
 }
