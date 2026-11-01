@@ -1,4 +1,4 @@
-const F1Background = () => {
+﻿const F1Background = () => {
   const glowA = {
     position: 'absolute',
     top: '-12%',
@@ -17,7 +17,7 @@ const F1Background = () => {
     width: '50vw',
     height: '50vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(255,88,0,0.7) 0%, rgba(255,88,0,0) 70%)',
+    background: 'radial-gradient(circle, rgba(255,88,0,0.85) 0%, rgba(255,88,0,0) 70%)',
     animation: 'f1GlowB 17s ease-in-out infinite alternate',
   }
 
@@ -28,7 +28,7 @@ const F1Background = () => {
     width: '60vw',
     height: '60vw',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(90,0,10,0.75) 0%, rgba(90,0,10,0) 70%)',
+    background: 'radial-gradient(circle, rgba(150,20,0,0.75) 0%, rgba(150,20,0,0) 70%)',
     animation: 'f1GlowC 21s ease-in-out infinite alternate',
   }
 
@@ -49,7 +49,7 @@ const F1Background = () => {
           inset: 0,
           zIndex: -1,
           overflow: 'hidden',
-          background: 'linear-gradient(160deg, #04060c 0%, #0a0510 55%, #0c0610 100%)',
+          background: 'linear-gradient(160deg, #0a0508 0%, #12060c 55%, #150a0c 100)',
           pointerEvents: 'none',
         }}
       >
