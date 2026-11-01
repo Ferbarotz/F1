@@ -38,17 +38,17 @@ const ctaStyle = {
 const F1Home = () => {
   const [slide, setSlide] = useState(0)
   const slides = [
-    { team: 'Red Bull Racing', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Racing Bulls', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Haas', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Audi', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Mercedes', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Alpine', car: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp', logo: 'https://cdn-8.motorsport.com/images/mgl/6D1JZmx0/s200/alpine-logo-2.webp' },
-    { team: 'Ferrari', car: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/070616_Ferrari_F1_2007_01.JPG' },
-    { team: 'Williams', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Cadillac', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'Aston Martin', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
-    { team: 'McLaren', car: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Formula_1_race_cars_on_display.jpg' },
+    { team: 'Red Bull Racing', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Racing Bulls', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Haas', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Audi', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Mercedes', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Alpine', car: '/F1/alpine-logo-2.webp', logo: '/F1/alpine-logo-2.webp' },
+    { team: 'Ferrari', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Williams', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Cadillac', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Aston Martin', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'McLaren', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
   ]
   const carouselBtnStyle = {
     width: '38px',

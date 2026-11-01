@@ -298,7 +298,7 @@ const F1Current = () => {
                               }}
                             >
                               <img
-                                src="/shield.png"
+                                src="/F1/shield.png"
                                 alt="Escudo de la escudería"
                                 style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
                               />
