@@ -15,8 +15,6 @@ const Navbar = () => {
     fontWeight: 600,
     padding: '0.45rem 0.95rem',
     borderRadius: '8px',
-    border: '1px solid rgba(225, 6, 0, 0.4)',
-    background: 'rgba(225, 6, 0, 0.08)',
     fontFamily: "'Rajdhani', 'Inter', system-ui, sans-serif",
   }
 
