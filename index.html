@@ -7,9 +7,51 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      :root {
+        --font-heading: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        --font-body: 'Barlow', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        --font-condensed: 'Barlow Condensed', 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html,
+      body,
+      #root {
+        font-family: var(--font-body);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      nav,
+      nav a,
+      button {
+        font-family: var(--font-heading);
+      }
+
+      input,
+      textarea,
+      select {
+        font-family: var(--font-body);
+      }
+
+      small,
+      time {
+        font-family: var(--font-condensed);
+        letter-spacing: 0.02em;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
