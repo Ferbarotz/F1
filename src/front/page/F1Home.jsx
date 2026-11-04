@@ -38,17 +38,11 @@ const ctaStyle = {
 const F1Home = () => {
   const [slide, setSlide] = useState(0)
   const slides = [
-    { team: 'Red Bull Racing', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Racing Bulls', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Haas', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Audi', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Mercedes', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Alpine', car: '/F1/alpine-logo-2.webp', logo: '/F1/alpine-logo-2.webp' },
-    { team: 'Ferrari', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Williams', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Cadillac', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'Aston Martin', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
-    { team: 'McLaren', car: '/F1/ferrari.jpg', logo: '/F1/ferrari.jpg' },
+    { team: 'Audi R26', car: '/F1/audi-r26.jpg' },
+    { team: 'Red Bull RB22', car: '/F1/red-bull-rb22.avif' },
+    { team: 'Mercedes W17', car: '/F1/mercedes-w17.avif' },
+    { team: 'Alpine A526', car: '/F1/alpine-a526.avif' },
+    { team: 'Racing Bulls VCARB03', car: '/F1/racing-bulls-vcarb03.avif' },
   ]
   const carouselBtnStyle = {
     width: '38px',
@@ -110,26 +104,13 @@ const F1Home = () => {
             }}
           >
             <div style={{ display: 'flex', transition: 'transform 0.6s ease', transform: `translateX(-${slide * 100}%)` }}>
-              {slides.map((s, i) => {
-                const isTop = i % 4 < 2
-                const isLeft = i % 2 === 0
-                const logoStyle = {
-                  position: 'absolute',
-                  ...(isTop ? { top: '10%' } : { bottom: '14%' }),
-                  ...(isLeft ? { left: '10%' } : { right: '10%' }),
-                  width: '120px',
-                  objectFit: 'contain',
-                  zIndex: 2,
-                }
-                return (
-                  <div key={i} style={{ minWidth: '100%', height: '360px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0508' }}>
-                    <img src={s.car} alt={s.team} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(4,6,12,0.1) 0%, rgba(4,6,12,0.85) 100%)' }} />
-                    <img src={s.logo} alt={`${s.team} logo`} style={logoStyle} />
-                    <span style={{ position: 'absolute', bottom: '1rem', left: '1.2rem', color: '#fff', fontSize: '1.5rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>{s.team}</span>
-                  </div>
-                )
-              })}
+              {slides.map((s, i) => (
+                <div key={i} style={{ minWidth: '100%', height: '360px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0508' }}>
+                  <img src={s.car} alt={s.team} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(4,6,12,0.1) 0%, rgba(4,6,12,0.85) 100%)' }} />
+                  <span style={{ position: 'absolute', bottom: '1rem', left: '1.2rem', color: '#fff', fontSize: '1.5rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>{s.team}</span>
+                </div>
+              ))}
             </div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
