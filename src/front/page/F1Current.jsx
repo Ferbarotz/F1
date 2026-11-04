@@ -9,7 +9,7 @@ const pageStyle = {
   position: 'relative',
   zIndex: 1,
   color: '#f2f5f9',
-  fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+  fontFamily: 'var(--font-body)',
   backgroundImage: 'none',
 }
 
